@@ -1,0 +1,43 @@
+// Autor: Ivan Sichmann Freitas
+// Licença: WTFPL
+digraph compilation {
+    node[style=filled]
+
+    subgraph file1 {
+        source_file1 [fillcolor=aquamarine,shape=circle,label="Arquivo fonte"];
+        source_file1 -> object_file1;
+    }
+
+    subgraph file2 {
+        source_file2 [fillcolor=aquamarine,shape=circle,label="Arquivo fonte"];
+        source_file2 -> object_file2;
+    }
+
+    subgraph file3 {
+        source_file3 [fillcolor=aquamarine,shape=circle,label="Arquivo fonte"];
+        source_file3 -> object_file3;
+    }
+
+    subgraph object1 {
+        object_file1 [fillcolor=green,shape=rectangle,label="Arquivo objeto"];
+        object_file1 -> linker;
+    }
+
+    subgraph object2 {
+        object_file2 [fillcolor=green,shape=rectangle,label="Arquivo objeto"];
+        object_file2 -> linker;
+    }
+
+    subgraph object3 {
+        object_file3 [fillcolor=green,shape=rectangle,label="Arquivo objeto"];
+        object_file3 -> linker
+    }
+
+    subgraph linking {
+        rankdir=LR;
+        linker [fillcolor=orange,shape=circle,label="Linker"];
+        lib [fillcolor=green,shape=rectangle,label="Bibliotecas"];
+        program [fillcolor=orange,shape=rectangle,label="Programa executável"];
+        lib -> linker -> program;
+    }
+}

@@ -30,6 +30,8 @@ lembre-se que essas regras podem ser quebradas dada uma boa justificativa.
 - Imagens que serão usadas em mais de uma aula devem ir para o diretório
   'imagens' na raiz, caso contrário crie um diretório 'imagens' no diretório da
   aula
+- Coisas de latex que serão reaproveitadas devem ir para o diretório 'lib' na
+  raiz
 - Quando for usar imagens, tente sempre usar graphviz ou tikz, mas se não souber
   usar coloque o png ou svg no repositório (svg's devem ser convertidos para png
   no makefile)

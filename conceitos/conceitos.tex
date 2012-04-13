@@ -1,29 +1,23 @@
 % Autor: Ivan Sichman Freitas
 \documentclass{beamer}
-\usetheme{default}
-\usepackage[utf8x]{inputenc}
-\usepackage[brazil]{babel}
-\usepackage{graphicx}
+
+\input{../lib/estilo.tex}
+\input{../lib/titulo.tex}
 
 \begin{document}
 
 % TODO: adicionar exemplos
 
-\begin{frame}
-    \begin{figure}[h]
-        \centering
-        \includegraphics[scale=0.094]{../imagens/Mooks_gpsl.png}
-    \end{figure}
-    \begin{center}
-        \Huge Aula 0: Conceitos
-    \end{center}
-\end{frame}
-
-\begin{frame}{Compilador}
-    
-\end{frame}
+\gpsltitle{Aula 0: Conceitos}
 
 \begin{frame}{Processo de compilação}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.3]{./imagens/compiler.pdf}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Linkagem}
     \begin{figure}[h]
         \centering
         \includegraphics[scale=0.4]{./imagens/linking.pdf}

@@ -3,6 +3,7 @@
 
 \input{../lib/estilo.tex}
 \input{../lib/titulo.tex}
+\input{../lib/shell.tex}
 
 \begin{document}
 
@@ -48,5 +49,17 @@
 %pkg-config, /lib, /usr/lib
 \end{frame}
 
+\begin{frame}
+
+\begin{center}
+\begin{shell}
+    \usercmd{ls /home/ivan}
+    \usercmd{sudo su}
+    \rootcmd{rm -rf \slash}
+    \comment{isso não é uma boa idéia}
+\end{shell}
+\end{center}
+
+\end{frame}
 
 \end{document}

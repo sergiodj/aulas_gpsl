@@ -26,19 +26,34 @@ lembre-se que essas regras podem ser quebradas dada uma boa justificativa.
 - Mantenha o texto entre 72 e 80 colunas, exceto em construções complexas (e.g.
   tabelas)
 - Cada conjunto de slides deve ter seu próprio diretório. Slides das aulas para
-  os bixos devem ter "bixos-" prefixado no nome.
+  os bixos devem ter _bixos-_ prefixado no nome.
 - Imagens que serão usadas em mais de uma aula devem ir para o diretório
   'imagens' na raiz, caso contrário crie um diretório 'imagens' no diretório da
   aula
-- Coisas de latex que serão reaproveitadas devem ir para o diretório 'lib' na
+- Coisas de latex que serão reaproveitadas devem ir para o diretório _lib_ na
   raiz
 - Quando for usar imagens, tente sempre usar graphviz ou tikz, mas se não souber
   usar coloque o png ou svg no repositório (svg's devem ser convertidos para png
   no makefile)
+- Para simular a interação de um shell em um slide, inclua _lib/shell.tex_ e
+  use da seguinte manera:
+
+    `\begin{center}`  
+    `\begin{shell}`  
+    `\usercmd{sudo su}`  
+    `\comment{adicionando módulo}`  
+    `\rootcmd{modprobe _module_}`  
+    `\end{shell}`  
+    `\end{center}`  
 
 Licença
 =======
 
 Todo material disponível aqui é disponibilizado sob CC-BY 3.0, exceto
-caso outra licença seja especificada explicitamente, e o copyright é de cada
-respectivo autor.
+caso outra licença seja especificada explicitamente, e o copyright é
+de todos os contribuintes.
+
+Autores
+=======
+
+Ivan Sichmann Freitas, Sérgio Durigan Júnior

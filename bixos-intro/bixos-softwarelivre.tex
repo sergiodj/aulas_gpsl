@@ -1,0 +1,92 @@
+\documentclass{beamer}
+
+\input{../lib/estilo.tex}
+\input{../lib/titulo.tex}
+\input{../lib/shell.tex}
+
+\usepackage{xspace}
+
+\begin{document}
+
+\newcommand{\software}{\emph{software}\xspace}
+\newcommand{\Software}{\emph{Software}\xspace}
+\newcommand{\softwarelivre}{\Software Livre\xspace}
+\newcommand{\opensource}{\emph{Open-Source}\xspace}
+\gpsltitle{Aula Introdutória:\\  \softwarelivre}
+
+\begin{frame}{Objetivos}
+    \begin{itemize}
+        \item Entender o que é \softwarelivre e sua importância na computação.
+        \item Entender os ideais do \softwarelivre, as 4 liberdades, e as
+          diferenças do simples \opensource.
+        \item Conhecer os principais projetos e pessoas por trás da comunidade
+          de \softwarelivre.
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{O que é Software livre}
+    \begin{figure}[h]
+        \centering
+        \softwarelivre é qualquer \Software que garante ao usuário a liberdade
+        de usar, distribuir e modificar o \software, de forma a atender todas
+        as suas necessidades.
+    \end{figure}
+\end{frame}
+
+\begin{frame}{As 4 liberdades}
+    \begin{figure}[h]
+        \centering
+        A definição formal de \softwarelivre foi proposta por Richard Stallman
+        e se baseia em 4 liberdades, consideradas fundamentais:
+        \newline
+        \begin{itemize}
+        \item Liberdade 0: A liberdade de executar o programa para qualquer
+          propósito.
+        \item Liberdade 1: A liberdade de estudar como o programa funciona e
+          alterá-lo para fazê-lo funcionar como desejar.
+        \item Liberdade 2: A liberdade de redistribuir cópias do programa.
+        \item Liberdade 3: A liberdade de melhorar o programa e redistribuir
+          para toda a comunidade.
+          \end{itemize}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{\softwarelivre X \opensource}
+   \begin{itemize}
+     \item As liberdades 1, 2 e 3 exigem que o \softwarelivre seja \opensource.
+        \item Todo \softwarelivre é \opensource mas, nem todo \opensource é
+          \softwarelivre.
+        \item Aplicações \opensource não garante a liberdade de redistribuir
+          modificações, nem a manutenção das liberdades.
+   \end{itemize}
+\end{frame}
+
+\begin{frame}{Projeto GNU e a \emph{Free Software Foundation}}
+  %% TODO: Falar sobre ...
+\end{frame}
+
+\begin{frame}{Principais projetos}
+  %% TODO: Colocar logo e informações dos principais projetos livres?
+\end{frame}
+
+
+\begin{frame}{Porque desenvolver \softwarelivre}
+  %% Lembro que em 2012, o Sergio insistiu bastante em motivações para
+  %% contribuir: melhorar skill, trabalhar na área, ser foda, etc.
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    \begin{shell}
+      \usercmd{ls /home/ivan}
+      \usercmd{sudo su}
+      \rootcmd{rm -rf \slash}
+      \comment{isso não é uma boa idéia.}
+      \comment{Mas vai abrir muito}
+      \comment{espaço livre no seu HD}
+    \end{shell}
+  \end{center}
+\end{frame}
+
+\end{document}

@@ -51,9 +51,9 @@ Licença
 
 Todo material disponível aqui é disponibilizado sob CC-BY 3.0, exceto
 caso outra licença seja especificada explicitamente, e o copyright é
-de todos os contribuintes.
+de todos os contribuidores.
 
 Autores
 =======
 
-Ivan Sichmann Freitas, Sérgio Durigan Júnior
+Ivan Sichmann Freitas, Sérgio Durigan Júnior, Gabriel Krisman Bertazi.

@@ -11,7 +11,11 @@ e a avançada no segundo. O roteiro a ser seguido para cada aula é:
 
 Bixos
 -----
-TODO
+Aula 00: SL
+TODO: Aula 01: Linux 
+Aula 02: Shell
+TODO: Aula 03: Desktops
+TODO: Aula 04: Editores
 
 Avançada
 --------

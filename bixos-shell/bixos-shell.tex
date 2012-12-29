@@ -1,0 +1,199 @@
+\documentclass{beamer}
+
+\input{../lib/estilo.tex}
+\input{../lib/titulo.tex}
+\input{../lib/shell.tex}
+
+\usepackage{xspace}
+
+\begin{document}
+
+\newcommand{\software}{\emph{software}\xspace}
+\newcommand{\Software}{\emph{Software}\xspace}
+\newcommand{\softwarelivre}{\Software Livre\xspace}
+\newcommand{\opensource}{\emph{Open-Source}\xspace}
+\newcommand{\Shell}{\emph{Shell}\xspace}
+
+\gpsltitle{Aula 01:\\ \Shell}
+
+\begin{frame}{Objetivos}
+  \begin{itemize}
+  \item Entender as vantagens do uso da linha de comando frente às interfaces
+    gráficas.
+  \item Conhecer o formato dos comandos e os comandos básicos para realizar
+    tarefas cotidianas em um  terminal Unix.
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Terminal}
+  \begin{figure}[h]
+    \centering
+    \begin{itemize}
+      \item Um terminal é um \emph{front-end} para a entrada de comandos em um
+        \Shell.
+      \item Existem diversos emuladores de terminal no Linux, como o
+        gnome-terminal, o urxvt, o Xfce Terminal, o xterm, etc.
+        \item para abrir o gnome-terminal, por exemplo, aperte alt-f2 e
+          digite ``gnome-terminal''
+          \vfill
+          \begin{center}
+          \begin{shell}
+            \usercmd{echo ``Olá mundo!''}
+          \end{shell}
+          \end{center}
+      \end{itemize}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Comandos}
+    \begin{figure}[h]
+        \centering
+        Os comandos de terminal tem o seguinte formato \newline \\
+        \begin{shell}
+          \usercmd{comando arg1 arg2 arg3}
+        \end{shell}
+        \\
+        \begin{itemize}
+        \item Parâmetros normalmente são passados após um hífen ``-'' na forma
+          abreviada ou após dois hífens, na forma completa. Exemplo:
+        \end{itemize}
+        \begin{shell}
+          \usercmd{ls -h}
+          \usercmd{ls - -help}
+        \end{shell}
+        \\
+        \begin{itemize}
+        \item{ Os dois comandos acima fazem a mesma coisa: exibem a ajuda
+          do comando ls. Note que no primeiro foi utilizada a forma abreviada
+          do argumento enquanto no segundo usamos a forma por extenso}
+        \item{ Lembre-se que isto é uma convenção, e muitos programas podem não
+          seguir!}
+        \end{itemize}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Principais comandos}
+   \begin{itemize}
+   \item \emph{echo ``Bixos 2013''} : Escreve na tela o argumento passado.
+   \item \emph{ls} : Lista todos os arquivos do diretório atual.
+   \item \emph{cd} : Muda o diretório atual
+     \begin{itemize}
+     \item \emph{cd \~{}} : Muda o diretório atual para a sua home
+     \item \emph{cd documents} : Entra no diretório ``documents''
+     \item \emph{cd ..} : sobe um nível de diretório
+     \end{itemize}
+%%   \item touch aluno.tx : Cria um arquivo aluno.tx
+   \item \emph{rm aluno.tx} : Remove o arquivo alunos.tx
+   \item \emph{mkdir alunos}: Cria um diretório ``Alunos'' dentro do
+     diretório atual.
+   \item \emph{cp [origem] [destino]} : Copia um arquivo de um diretório para
+     outro.
+   \item \emph{mv [origem] [destino]} : Move um arquivo de um diretório para
+     outro.
+       
+
+   \end{itemize}
+\end{frame}
+
+\begin{frame}{Exercício - Comandos básicos}
+  Utilizando o terminal e os comandos vistos execute o seguinte procedimento:
+  \begin{itemize}
+  \item Crie um diretório na sua \emph{home} chamada ``gpsl2013''.
+  \item Navegue até o diretório /homes/2011/ra116931/gpsl2013/
+  \item Liste os arquivos da pasta
+  \item Copie todos os arquivos da pasta para dentro da pasta recém-criada na
+    sua \emph{home}
+  \item retorne à pasta na sua \emph{home} e verifique, listando os arquivos,
+    que os arquivos foram copiados corretamente.
+  \end{itemize}
+\end{frame}
+
+%%
+%% Não acho que essa informação pertença a essa aula!!!
+%%
+%\begin{frame}{Gerenciadores de pacotes}
+%  \begin{itemize}
+%  \item Todas as distribuições \emph{GNU/Linux} possuem gerenciadores de
+%      pacotes. No Ubuntu e Debian temos o \emph{apt-get}, no Fedora temos o
+%      \emph{yum}, etc. Para instalar um pacote (i.e. Firefox) no Ubuntu, você
+%      pode fazer:
+%  \end{itemize}
+%      \begin{center}
+%        \begin{shell}
+%          \rootcmd{apt-get install firefox}
+%        \end{shell}
+%        \vfill
+%      E pronto! Instalado!
+%      \end{center}
+%\end{frame}
+
+%% Redirecionamento de entrada e saída: Redirecionamento de entrada, pipes
+%% Tenho minhas duvidas se isso deve ser inserido nesse
+%% modulo
+\begin{frame}{Redirecionamento de I/O}
+  A entrada e saída de programas podem ser redirecionadas de e para arquivos ou
+  outros programas. Desta forma, podemos analisar a saída em editores de texto,
+  mudar rapidamente os parâmetros de entrada, ou ainda encadear programas, no
+  qual a saída de um é a entrada de outro.
+  \begin{center}
+    \begin{itemize}
+    \item Redirecionar a entrada a partir de um arquivo texto ``input.txt'':
+    \end{itemize}
+    \begin{shell}
+      \usercmd{calculator < input.txt}
+    \end{shell}
+
+    \begin{itemize}
+    \item Redirecionar a saída para um arquivo de texto ``output.txt'':
+    \end{itemize}
+    \begin{shell}
+      \usercmd{calculator > output.txt}
+    \end{shell}
+
+    \begin{itemize}
+    \item Redirecionar a saída de um programa para outro com pipe ``|'':
+    \end{itemize}
+    \begin{shell}
+      \usercmd{calc1 < in.tx  | calc2}
+    \end{shell}
+    
+  \end{center}
+
+\end{frame}
+
+
+\begin{frame}{Informações úteis}
+  \begin{itemize}
+  \item Para rodar um comando em modo de super-usuário, utilize o modificador
+    \emph{sudo}
+  \item Existe também o comando \emph{man}. Ele recebe um programa como
+    argumento e exibe o seu manual.
+  \item Outra convenção muito útil é implementar textos de ajuda e de versão.
+    Muitos programas implementam isso. Você pode obter as informações fazendo:
+  \end{itemize}
+  \begin{center}
+    \begin{shell}
+      \usercmd{ firefox - -help}
+      \usercmd{ firefox - -version}
+      \usercmd{ man firefox}
+    \end{shell}
+  \end{center}
+\end{frame}
+
+
+
+\begin{frame}
+  \begin{center}
+    \begin{shell}
+      \usercmd{ls /home/ivan}
+      \usercmd{sudo su}
+      \rootcmd{rm -rf \slash}
+      \comment{isso não é uma boa idéia.}
+      \comment{Mas vai abrir muito}
+      \comment{espaço livre no seu HD}
+    \end{shell}
+  \end{center}
+\end{frame}
+
+\end{document}

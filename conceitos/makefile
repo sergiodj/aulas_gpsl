@@ -1,9 +1,11 @@
 .PHONY : all imagens
 
-all: conceitos.tex imagens
+all: conceitos.pdf
+
+%.pdf: %.tex imagens
 	pdflatex --interaction=nonstopmode $<
 
 imagens: imagens/linking.pdf imagens/compiler.pdf
 
-%.pdf:
+%.pdf: %.dot
 	dot -Tpdf $*.dot > $*.pdf

@@ -5,7 +5,7 @@
 \input{../lib/shell.tex}
 
 \usepackage{xspace}
-
+\usepackage{url}
 \begin{document}
 
 \newcommand{\software}{\emph{software}\xspace}
@@ -51,23 +51,21 @@
         \centering
         Os comandos de terminal tem o seguinte formato \newline \\
         \begin{shell}
-          \usercmd{comando arg1 arg2 arg3}
+          \usercmd{comando [arg1] [arg2]}
         \end{shell}
         \\
         \begin{itemize}
-        \item Parâmetros normalmente são passados após um hífen ``-'' na forma
-          abreviada ou após dois hífens, na forma completa. Exemplo:
+        \item Parâmetros podem ser opcionais e normalmente são passados após um hífen
+          ``-'' na forma abreviada ou após dois hífens, na forma completa.
+          Exemplo:
         \end{itemize}
         \begin{shell}
-          \usercmd{ls -h} \\
-          \usercmd{ls --help}
-        \end{shell}
+          \usercmd{ls -h}\\
+          \usercmd{ls -{}-help}
+         \end{shell}
         \\
         \begin{itemize}
-        \item{ Os dois comandos acima fazem a mesma coisa: exibem a ajuda
-          do comando ls. Note que no primeiro foi utilizada a forma abreviada
-          do argumento enquanto no segundo usamos a forma por extenso}
-        \item{ Lembre-se que isto é uma convenção, e muitos programas podem não
+        \item{Lembre-se que isto é uma convenção, e muitos programas podem não
           seguir!}
         \end{itemize}
     \end{figure}
@@ -77,56 +75,48 @@
    \begin{itemize}
    \item \emph{echo ``Bixos 2013''} : Escreve na tela o argumento passado.
    \item \emph{ls} : Lista todos os arquivos do diretório atual.
+   \item \emph{pwd} : Exibe o diretório atual
    \item \emph{cd} : Muda o diretório atual
      \begin{itemize}
      \item \emph{cd \~{}} : Muda o diretório atual para a sua home
      \item \emph{cd documents} : Entra no diretório ``documents''
      \item \emph{cd ..} : sobe um nível de diretório
      \end{itemize}
-%%   \item touch aluno.tx : Cria um arquivo aluno.tx
    \item \emph{rm aluno.tx} : Remove o arquivo alunos.tx
    \item \emph{mkdir alunos}: Cria um diretório ``Alunos'' dentro do
      diretório atual.
+   \end{itemize}
+\end{frame}
+
+\begin{frame}{Principais comandos - 2}
+   \begin{itemize}
+   \item \emph{wget [remote\_file]} : Faz download do arquivo para a sua
+     máquina.
    \item \emph{cp [origem] [destino]} : Copia um arquivo de um diretório para
      outro.
    \item \emph{mv [origem] [destino]} : Move um arquivo de um diretório para
      outro.
-       
-
+   \item \emph{cat [file]} : Imprime o arquivo na saída padrão
+   \item \emph{grep [Keyword] [file]} : Imprime na saída padrão as linhas do
+     arquivo [file] que contém as palavras chaves [Keyword]
    \end{itemize}
 \end{frame}
+
 
 \begin{frame}{Exercício - Comandos básicos}
   Utilizando o terminal e os comandos vistos execute o seguinte procedimento:
   \begin{itemize}
+  \item Baixe para a sua home, via terminal, o arquivo:
+    \url{http://www.students.ic.unicamp.br/\~ra116931/bixos.txt}
   \item Crie um diretório na sua \emph{home} chamada ``gpsl2013''.
-  \item Navegue até o diretório /homes/2011/ra116931/gpsl2013/
-  \item Liste os arquivos da pasta
-  \item Copie todos os arquivos da pasta para dentro da pasta recém-criada na
-    sua \emph{home}
-  \item retorne à pasta na sua \emph{home} e verifique, listando os arquivos,
-    que os arquivos foram copiados corretamente.
+  \item Copie o arquivo baixado para dentro da pasta recém-criada na sua
+    \emph{home} e liste os arquivos da pasta para verificar que o arquivo foi
+    criado.
+  \item Navegue até a pasta e use cat para ler o conteúdo do arquivo.
+  \item Use grep para encontrar referências a ``Monty Python'' no arquivo
+    baixado.
   \end{itemize}
 \end{frame}
-
-%%
-%% Não acho que essa informação pertença a essa aula!!!
-%%
-%\begin{frame}{Gerenciadores de pacotes}
-%  \begin{itemize}
-%  \item Todas as distribuições \emph{GNU/Linux} possuem gerenciadores de
-%      pacotes. No Ubuntu e Debian temos o \emph{apt-get}, no Fedora temos o
-%      \emph{yum}, etc. Para instalar um pacote (i.e. Firefox) no Ubuntu, você
-%      pode fazer:
-%  \end{itemize}
-%      \begin{center}
-%        \begin{shell}
-%          \rootcmd{apt-get install firefox}
-%        \end{shell}
-%        \vfill
-%      E pronto! Instalado!
-%      \end{center}
-%\end{frame}
 
 %% Redirecionamento de entrada e saída: Redirecionamento de entrada, pipes
 %% Tenho minhas duvidas se isso deve ser inserido nesse
@@ -165,32 +155,35 @@
 
 \begin{frame}{Informações úteis}
   \begin{itemize}
-  \item Para rodar um comando em modo de super-usuário, utilize o modificador
+    \item A tecla Tab auto-completa nome de programas, caminho para arquivos,
+      etc.
+  \item Para rodar um comando em modo de super-usuário, utilize o comando
     \emph{sudo}
   \item Existe também o comando \emph{man}. Ele recebe um programa como
     argumento e exibe o seu manual.
   \item Outra convenção muito útil é implementar textos de ajuda e de versão.
     Muitos programas implementam isso. Você pode obter as informações fazendo:
+  \item O comando \emph{apropos [termo]} pesquisa uma palavra-chave nos arquivos
+    do man.
   \end{itemize}
   \begin{center}
     \begin{shell}
-      \usercmd{ firefox - -help} \\
-      \usercmd{ firefox - -version} \\
-      \usercmd{ man firefox}
+      \usercmd{ firefox -{}-help}\\
+      \usercmd{ firefox -{}-version}\\
+      \usercmd{ man firefox }\\
+      \usercmd{ apropos browser}
     \end{shell}
   \end{center}
 \end{frame}
 
-
-
 \begin{frame}
   \begin{center}
     \begin{shell}
-      \usercmd{ls /home/ivan} \\
-      \usercmd{sudo su} \\
-      \rootcmd{rm -rf \slash} \\
-      \comment{isso não é uma boa idéia.} \\
-      \comment{Mas vai abrir muito} \\
+      \usercmd{ls /home/ivan}\\
+      \usercmd{sudo su}\\
+      \rootcmd{rm -rf \slash }\\
+      \comment{isso não é uma boa idéia.}\\
+      \comment{Mas vai abrir muito}\\
       \comment{espaço livre no seu HD}
     \end{shell}
   \end{center}

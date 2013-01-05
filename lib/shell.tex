@@ -23,7 +23,7 @@
 % coloca um comando de shell com a formatação correta
 % o argumento opcional é o texto do prompt
 \newcommand{\shellcommand}[2]{
-    \textcolor{white}{#1 \ #2} \\
+    \textcolor{white}{#1 \ #2}
 }
 
 \newcommand{\usercmd}[1]{
@@ -36,17 +36,18 @@
 
 % comando para inserir um comentário com a formatação apropriada
 \newcommand{\comment}[1]{
-    \textcolor{gray}{\# \ {\em #1 }}\\
+    \textcolor{gray}{\# \ {\em #1 }}
 }
 
 \newsavebox{\shellbox}
 \newenvironment{shell}
 {
     \global\begin{lrbox}{\shellbox}
-    \begin{minipage}[c]{0.6\textwidth}
+    \begin{minipage}[c]{0.8\textwidth}
     \begin{tt}
 }
 {
+    \nolinebreak[4]
     \end{tt}
     \end{minipage}
     \end{lrbox}

@@ -26,8 +26,8 @@
     \textcolor{white}{#1 \ #2}
 }
 
-\newcommand{\usercmd}[1]{
-    \shellcommand{\$}{#1}
+\newcommand{\usercmd}[2][]{
+    \shellcommand{#1\$}{#2}
 }
 
 \newcommand{\rootcmd}[1]{

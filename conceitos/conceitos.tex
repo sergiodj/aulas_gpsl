@@ -1,14 +1,8 @@
 \documentclass{beamer}
-\usetheme{default}
-% CM/EC Fonts
-\usepackage{ae,aecompl}
-\usepackage[utf8x]{inputenc}
-\usepackage[brazil]{babel}
-% Encoding da fonte (útil para hifenização)
-\usepackage[T1]{fontenc}
-% Hyperref
-\usepackage{hyperref}
-\usepackage{graphicx}
+
+\input{../lib/estilo.tex}
+\input{../lib/titulo.tex}
+\input{../lib/shell.tex}
 
 % Opções para o pacote hyperref
 \hypersetup{colorlinks=true,
@@ -21,24 +15,31 @@
 
 % TODO: adicionar exemplos
 
-\begin{frame}
-    \begin{figure}[h]
-        \centering
-        \includegraphics[scale=0.094]{../imagens/Mooks_gpsl.png}
-    \end{figure}
-    \begin{center}
-        \Huge Aula 0: Conceitos
-    \end{center}
-\end{frame}
+\gpsltitle{Aula 0: Conceitos}
 
-\begin{frame}{Compilador}
-    
+\begin{frame}{Objetivos}
+    \begin{itemize}
+        \item Entender o processo de compilação (i.e., como o compilador
+              faz a ``mágica'')
+        \item Entender o processo de \textit{linkagem}, saber como
+              fazer um programa básico divido em objetos
+        \item Saber a diferença entre \textit{linkagem} estática e
+              dinâmica
+        \item Conhecer formas de obter informações sobre os binários
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Processo de compilação}
     \begin{figure}[h]
         \centering
-        \includegraphics[scale=0.3]{./imagens/compilation_process.png}
+        \includegraphics[scale=0.3]{./imagens/compiler.pdf}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{\textit{Linkagem}}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.4]{./imagens/linking.pdf}
     \end{figure}
 \end{frame}
 
@@ -51,8 +52,20 @@
 \end{frame}
 
 \begin{frame}{Bibliotecas}
-    
+%pkg-config, /lib, /usr/lib
 \end{frame}
 
+\begin{frame}
+
+\begin{center}
+\begin{shell}
+    \usercmd{ls /home/ivan} \\
+    \usercmd{sudo su} \\
+    \rootcmd{rm -rf \slash} \\
+    \comment{isso não é uma boa idéia}
+\end{shell}
+\end{center}
+
+\end{frame}
 
 \end{document}

@@ -1,0 +1,55 @@
+% configurações do lstlisting para simular um shell
+
+\usepackage{listings}
+\usepackage{color}
+\usepackage[defaultmono]{droidmono}
+
+\lstset{
+    basicstyle=\ttfamily\color{white},
+    language=bash,
+    stepnumber=0, % sem númvero de linhas
+    %backgroundcolor=\color{black},
+    tabsize=4,
+    captionpos=b,
+    keywordstyle=\color{green},
+    showspaces=false,
+    showstringspaces=false,
+    inputencoding=utf8,
+    extendedchars=true,
+    numberstyle=\scriptsize,
+    literate={á}{{\'a}}1
+}
+
+% coloca um comando de shell com a formatação correta
+% o argumento opcional é o texto do prompt
+\newcommand{\shellcommand}[2]{
+    \textcolor{white}{#1 \ #2}
+}
+
+\newcommand{\usercmd}[2][]{
+    \shellcommand{#1\$}{#2}
+}
+
+\newcommand{\rootcmd}[1]{
+    \shellcommand{\#}{#1}
+}
+
+% comando para inserir um comentário com a formatação apropriada
+\newcommand{\comment}[1]{
+    \textcolor{gray}{\# \ {\em #1 }}
+}
+
+\newsavebox{\shellbox}
+\newenvironment{shell}
+{
+    \global\begin{lrbox}{\shellbox}
+    \begin{minipage}[c]{0.8\textwidth}
+    \begin{tt}
+}
+{
+    \nolinebreak[4]
+    \end{tt}
+    \end{minipage}
+    \end{lrbox}
+    \colorbox{black}{\usebox{\shellbox}}
+}

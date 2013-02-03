@@ -34,7 +34,6 @@ digraph compilation {
     }
 
     subgraph linking {
-        rankdir=LR;
         linker [fillcolor=orange,shape=circle,label="Linker"];
         lib [fillcolor=green,shape=rectangle,label="Bibliotecas"];
         program [fillcolor=orange,shape=rectangle,label="Programa executável"];

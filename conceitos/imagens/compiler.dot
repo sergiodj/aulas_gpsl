@@ -1,0 +1,59 @@
+// Autor: Ivan Sichmann Freitas
+// Licença: WTFPL
+digraph compiler {
+
+	subgraph source1 {
+		source_file1 [label="Arquivo de código fonte",shape=note];
+		source_file1 -> pp_1;
+	}
+
+	subgraph source2 {
+		source_file2 [label="Arquivo de código fonte",shape=note];
+		source_file2 -> pp_2;
+	}
+
+	subgraph cluster_compilation1 {
+		style=filled;
+		color=lightgrey;
+
+		pp_1 [label="Preprocessamento",shape=rectangle,style=filled,fillcolor=white];
+		lex_1 [label="Análise léxica",shape=rectangle,style=filled,fillcolor=white];
+		parsing_1 [label="Análise sintática/semântica",shape=rectangle,style=filled,fillcolor=white];
+		inter_code_1 [label="Código intermediário",shape=rectangle,style=filled,fillcolor=white];
+
+		pp_1 -> lex_1 -> parsing_1 -> inter_code_1;
+    }
+
+	subgraph cluster_compilation2 {
+		style=filled;
+		color=lightgrey;
+
+		pp_2 [label="Preprocessamento",shape=rectangle,style=filled,fillcolor=white];
+		lex_2 [label="Análise léxica",shape=rectangle,style=filled,fillcolor=white];
+		parsing_2 [label="Análise sintática/semântica",shape=rectangle,style=filled,fillcolor=white];
+		inter_code_2 [label="Código intermediário",shape=rectangle,style=filled,fillcolor=white];
+
+		pp_2 -> lex_2 -> parsing_2 -> inter_code_2;
+    }
+
+    optimizer [label="Otimizador",shape=rectangle];
+
+	inter_code_1 -> optimizer;
+	inter_code_2 -> optimizer;
+    optimizer -> code_generator_1;
+    optimizer -> code_generator_2;
+	
+	subgraph code_gen1 {
+		code_generator_1 [label="Gerador de código\nArquitetura X\n(linguagem de máquina)"];
+		program_1 [label="Programa final"];
+
+		code_generator_1 -> program_1;
+	}
+
+	subgraph code_gen2 {
+		code_generator_2 [label="Gerador de código\nArquitetura Y\n(linguagem de máquina)"];
+		program_2 [label="Programa final"];
+
+		code_generator_2 -> program_2;
+	}
+}

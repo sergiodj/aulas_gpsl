@@ -49,9 +49,9 @@
 \begin{frame}{Comandos}
     \begin{figure}[h]
         \centering
-        Os comandos de terminal tem o seguinte formato \newline \\
+        Os comandos de terminal têm o seguinte formato \newline \\
         \begin{shell}
-          \usercmd{comando [arg1] [arg2]}
+          \usercmd{comando [arg1] [arg2] ...}
         \end{shell}
         \\
         \begin{itemize}
@@ -182,8 +182,8 @@
       etc.
   \item Para rodar um comando em modo de super-usuário, utilize o comando
     \emph{sudo}
-  \item Existe também o comando \emph{man}. Ele recebe um programa como
-    argumento e exibe o seu manual.
+  \item Existe também o comando \emph{man}. Ele recebe o nome de um programa
+    como argumento e exibe o seu manual.
   \item Outra convenção muito útil é implementar textos de ajuda e de versão.
     Muitos programas implementam isso. Você pode obter as informações fazendo:
   \item O comando \emph{apropos [termo]} pesquisa uma palavra-chave nos arquivos
@@ -191,10 +191,10 @@
   \end{itemize}
   \begin{center}
     \begin{shell}
-      \usercmd{ firefox -{}-help}\\
-      \usercmd{ firefox -{}-version}\\
-      \usercmd{ man firefox }\\
-      \usercmd{ apropos browser}
+      \usercmd{ls -{}-help}\\
+      \usercmd{ls -{}-version}\\
+      \usercmd{man ls }\\
+      \usercmd{apropos browser}
     \end{shell}
   \end{center}
 \end{frame}
